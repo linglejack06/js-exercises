@@ -87,3 +87,13 @@ function replicate(reps, num) {
   }
   return [num].concat(replicate(reps - 1, num))
 }
+function multiples (n, count = 0) {
+  if (n < 3) {
+    return count;
+  }
+  if (n % 3 === 0 || n % 5 === 0) {
+    return multiples(n - 1, count + 1);
+  } else {
+    return multiples(n - 1, count);
+  }
+}
